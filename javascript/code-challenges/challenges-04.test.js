@@ -125,7 +125,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  return arr.sort((a,b) => a.toString().length - b.toString().length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -161,7 +161,18 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  // (if) (else if) (else)
+  return arr.sort((a,b) => {
+    if (a.lastName !== b.lastName){
+      return a.lastName > b.lastName ? 1 : -1
+    }
+    else if (a.firstName !== b.firstName) {
+      return a.firstName > b.firstName ? 1 : -1
+    }
+    else {
+      return a.age - b.age;
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,7 +212,14 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  const daysOfWeek = {
+    Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4
+  }
+
+  return arr.sort((a,b) => {
+
+   return (daysOfWeek[a.dayOfWeek] - daysOfWeek[b.dayOfWeek]) || (a.start > b.start ? 1 :(a.start < b.start ? -1 : 0)) || (a.end > b.end ? 1 : (a.end < b.end ? -1 : 0));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -294,7 +312,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
@@ -314,7 +332,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -345,7 +363,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
