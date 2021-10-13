@@ -24,10 +24,11 @@ let starWarsPeople = [
   }
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => 
-  starWarsArr.sort(function(a,b){return b.height - a.height})
-
-
+const sortStarWarsCharacters = (starWarsArr) => {
+return starWarsArr.sort((a,b) => {
+    return parseInt(b.height) - parseInt(a.height)
+  })
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -130,7 +131,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  
+  recipe.ingredients.forEach(item => {
+    let spaced = item.indexOf(' ');
+    item = item.slice(spaced + 1);
+    spaced = item.indexOf(' ');
+    item = item.slice(spaced + 1);
+    result.push(item)
+  })
   return result;
 };
 // ?????????
