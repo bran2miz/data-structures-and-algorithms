@@ -37,7 +37,7 @@ const findMax = (matrix) => {
   }
   return highestNum;
 };
-//????
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -144,17 +144,9 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  let value;
-  arr.forEach(store => {
-    store.item.forEach( obj => {
-      if (obj.name === 'Treats') {
-        value = obj.quantity;
-      }
-    });
-  });
-  return value;
+  return arr[2].items[1.].quantity;
 };
-// ??????????
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
