@@ -60,7 +60,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((acc, val) => acc + val.reduce((innerAcc, innerVal) => innerAcc + innerVal,0),0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +76,18 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let twoToThePower = [];
+  input.forEach(elem => {
+    let newArray = [];
+    elem.forEach(elem2 => {
+      if((typeof(elem2) === 'number') && (elem2 % 5 === 0)) {
+        elem2 = Math.pow(2, elem2);
+        newArray.push(elem2);
+      }
+    });
+    twoToThePower.push(newArray);
+  });
+  return twoToThePower;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,7 +153,8 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(char => char.gender === 'male' || char.gender === 'female')
+  .map(char => char.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +164,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortSoFar, nextCharacter) => Number(shortSoFar.height) < Number(nextCharacter.height) ? shortSoFar : nextCharacter).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
