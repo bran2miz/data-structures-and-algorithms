@@ -35,9 +35,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  const newArr = [];
-  arr.forEach( str => str.includes(":)") ? newArr.push(str) : newArr);
-  return newArr;
+  return arr.filter(happy => happy.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,9 +47,9 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  return arr.map(str => str.replace(/[^\d]/g, ''));
+  return arr.map(num => `${num.substring(1,4)}${num.substring(6,9)}${num.substring(10)}`);
 };
-
+// place a single number (10) and it will go to the end of the numbers
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 
 
@@ -61,9 +59,9 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((element,idx) => idx % 2 === 1).join('');
 };
-
+// modulus divide number and give you back the number
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
@@ -71,7 +69,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(string => string.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
