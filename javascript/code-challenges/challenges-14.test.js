@@ -11,10 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  let regex = /^(Mr\.) | (Mrs\.)|(Dr\.)) [a-zA-Z]/g;
-  let newArr = arr.filter(num => regex.test(num))
-  return newArr;
-}
+  let regex = /\w{2,3}[.] [A-Za-z]+$/g;
+  return arr.filter((word) => regex.test(word));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -163,9 +162,39 @@ Here is a sample board:
   ['X', 'O', 'X'],
 ];
 ------------------------------------------------------------------------------------------------ */
+function checkWin(set){
+  let results = "";
+  if (set.filter((score)=> score === "X").length === 3) {
+    results = "X WINS";
+  } else if (set.filter((score)=> score === "0").length === 3) {
+    results = "0 WINS";
+  } else {
+    results = "nope";
+  }
+  return results;
+}
+
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const regex = /wins/i;
+  const plays = [];
+  const row1 = board[0];
+  const row2 = board[1];
+  const row3 = board[2];
+  const col1 = [board[0][0], board[1][0], board[2][0]];
+  const col2 = [board[0][1], board[1][1], board[2][1]];
+  const col3 = [board[0][2], board[1][2], board[2][2]];
+  const diagonal1 = [board[0][0], board[1][1], board[2][2]];
+  const diagonal2 = [board[2][0], board[1], [1], board[0][2]];
+
+  plays.push(row1, row2, row3, col1, col2, col3, diagonal1, diagonal2);
+  let winner = false;
+  plays.forEach((game) => {
+    if (checkWin(game).match(regex)) {
+      winner = true;
+    }
+  });
+  return winner;
 };
 
 /* ------------------------------------------------------------------------------------------------
