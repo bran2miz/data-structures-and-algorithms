@@ -6,3 +6,5 @@ This challenge expects a whiteboard that includes a function that takes in a lis
 
 ## Approach & Efficiency
 Took the approach with the intent to iterate over the array to append the numbers at the end of the list and return the new list.
+
+[<==BACK](../README.md)
