@@ -19,3 +19,10 @@ The insert() function creates new nodes. If a node exists as a value within the 
 The includes() function will navigate through the linked lists for nodes with the same values. If the linked list value and the current value match it will be set to True; otherwise the value will return false.
 
 The to_string function will begin at the head of the linked list and look through all the nodes. The function will then take the current value of that node. By implementing a f string, it will push the matching values into the curly brackets {}.
+
+## Collaborators
+
+Michael Greene
+Alex Payne
+Eddi Ponce
+Connor Bryce
