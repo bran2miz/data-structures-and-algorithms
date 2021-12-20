@@ -26,3 +26,6 @@ Michael Greene
 Alex Payne
 Eddi Ponce
 Connor Bryce
+
+Sources:
+[Source](https://www.w3schools.com/python/ref_string_format.asp)
