@@ -45,7 +45,7 @@ The challenge was to create 3 separate functions that:
 
 ### Whiteboard Process
 
-![WhiteBoard](./code_challenges/linked-list/Images/whiteboard-linked-list.png)
+![WhiteBoard](./Images/whiteboard-linked-list.png)
 
 ### Approaches & Efficiency
 
@@ -58,7 +58,7 @@ Insert After Big O => Time O(n) Space O(1)
 ## Solution
 
 write pytest in terminal:
-![Terminal Testing](./code_challenges/linked-list/Images/terminal-testing.png)
+![Terminal Testing](./Images/terminal-testing.png)
 
 **Checklist:**
 [x]Top-level README “Table of Contents” is updated
