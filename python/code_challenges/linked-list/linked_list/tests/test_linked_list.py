@@ -63,6 +63,40 @@ def test_insert_to_string_with_false():
     expected = False
     assert actual == expected
 
+
+def test_add_multiple_nodes_to_existing_ll(ll):
+    ll.append(True)
+    ll.append("Hello")
+    expected = '{ 1 } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> { True } -> { Hello } -> NONE'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_node_before_middle_ll(ll):
+    ll.insert_before(1991, "Mid")
+    expected = '{ 1 } -> { Hello } -> { Mid } -> { 1991 }-> { 6 } -> { 7 } -> NONE'
+    actual = ll.__str__()
+    assert expected == actual
+
+
+def test_insert_node_before_first_ll(ll):
+    ll.insert_before(1, "First")
+    expected = ' { First } -> { 1 } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> NONE'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_node_after_middle_ll(ll):
+    ll.insert_after(1991, "Mid")
+    expected = '{ 1 } -> { Hello } -> { 1991 } -> { Mid } -> { 6 } -> { 7 } -> NONE'
+    actual = ll.__str__()
+    assert expected == actual
+
+def test_insert_node_after_first_ll(ll):
+     ll.insert_after(1,"First")
+     expected = '{ 1 } -> { First } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> NONE'
+     actual = ll.__str__()
+     assert expected == actual
+
+
 def test_insert_to_linked_list():
     # ll
     # node1
