@@ -45,7 +45,7 @@ The challenge was to create 3 separate functions that:
 
 ### Whiteboard Process
 
-[WhiteBoard](./code_challenges/linked-list/Images/whiteboard-linked-list.png)
+![WhiteBoard](/code_challenges/linked-list/Images/whiteboard-linked-list.png)
 
 ### Approaches & Efficiency
 
