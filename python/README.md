@@ -10,6 +10,8 @@
 
 [Code Challenge 03](./code_challenges/array-binary-search/README.md)
 
+[Code Challenge 04](./code_challenges/linked-list/README.md)
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
