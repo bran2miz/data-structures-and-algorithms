@@ -1,5 +1,8 @@
 # Singly Linked List
 
+**Author**: Brandon Mizutani
+**Version**: 1.0.0 (Branch: [Git Branch URL](https://github.com/bran2miz/data-structures-and-algorithms/tree/linked-list-insertions))
+
 In class we learned about the idea of linked lists and classes. We also learned about the idea that all of the nodes do not have any other information except for their own value and the value of the next node.
 
 ## Challenge
@@ -26,6 +29,47 @@ Michael Greene
 Alex Payne
 Eddi Ponce
 Connor Bryce
+Isaiah Burkes
 
 Sources:
 [Source](https://www.w3schools.com/python/ref_string_format.asp)
+
+## Challenge Summary
+
+### Linked Lists Insertions
+
+The challenge was to create 3 separate functions that:
+1. Appended an item to the end of a list
+2. Inserted an item into the list before the current value
+3. Inserted an item into the list after the current value.
+
+### Whiteboard Process
+
+[WhiteBoard](./code_challenges/linked-list/Images/whiteboard-linked-list.png)
+
+### Approaches & Efficiency
+
+Singly linked list Big O:
+
+Append Big O => Time O(n) Space O(1)
+Insert Before Big O => Time O(n) Space O(1)
+Insert After Big O => Time O(n) Space O(1)
+
+## Solution
+
+write pytest in terminal:
+[Terminal Testing](./code_challenges/linked-list/Images/terminal-testing.png)
+
+**Checklist:**
+[x]Top-level README “Table of Contents” is updated
+[x] README for this challenge is complete
+[x] Summary, Description, Approach & Efficiency, Solution
+[x] Picture of whiteboard
+[x] Link to code
+[x] Feature tasks for this challenge are completed
+[x] Unit tests written and passing
+[x] “Happy Path” - Expected outcome
+[x] Expected failure
+[x] Edge Case (if applicable/obvious)
+
+[<==BACK](../README.md)
