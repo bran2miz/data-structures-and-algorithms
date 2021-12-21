@@ -63,39 +63,71 @@ def test_insert_to_string_with_false():
     expected = False
     assert actual == expected
 
-
-def test_add_multiple_nodes_to_existing_ll(ll):
-    ll.append(True)
-    ll.append("Hello")
-    expected = '{ 1 } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> { True } -> { Hello } -> NONE'
-    actual = ll.__str__()
+def test_to_append():
+    ll = LinkedList()
+    ll.append(7)
+    expected = 7
+    actual = ll.head.value
     assert expected == actual
 
-def test_insert_node_before_middle_ll(ll):
-    ll.insert_before(1991, "Mid")
-    expected = '{ 1 } -> { Hello } -> { Mid } -> { 1991 }-> { 6 } -> { 7 } -> NONE'
-    actual = ll.__str__()
-    assert expected == actual
+def test_to_append_multiple_items():
+    ll = LinkedList(Node(10))
+    ll.append(3)
+    ll.append(4)
+    actual = ll.to_string()
+    expected = '{ 10 } -> { 3 } -> { 4 } -> NONE'
+    assert actual == expected
 
+def test_insert_before():
+    ll = LinkedList(Node(10))
+    ll.head.next = Node(7)
+    ll.head.next.next = Node(2)
+    ll.head.next.next.next = Node(5)
+    ll.insert_before(2, 8)
+    actual = ll.to_string()
+    expected = '{ 10 } -> { 7 } -> { 8 } -> { 2 } -> { 5 } -> NONE'
 
-def test_insert_node_before_first_ll(ll):
-    ll.insert_before(1, "First")
-    expected = ' { First } -> { 1 } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> NONE'
-    actual = ll.__str__()
-    assert expected == actual
+def test_insert_before_first_node():
+    ll = LinkedList(Node(10))
+    ll.insert_before(10, 2)
+    actual = ll.to_string()
+    expected = '{ 2 } -> { 10 } -> NONE'
+    assert actual == expected
 
-def test_insert_node_after_middle_ll(ll):
-    ll.insert_after(1991, "Mid")
-    expected = '{ 1 } -> { Hello } -> { 1991 } -> { Mid } -> { 6 } -> { 7 } -> NONE'
-    actual = ll.__str__()
-    assert expected == actual
+def test_insert_before_alerts_exception():
+    with pytest.raises(Exception):
+        ll = LinkedList(Node(10))
+        ll.head.next = Node(7)
+        ll.head.next.next = Node(2)
+        ll.head.next.next.next = Node(5)
+        ll.insert_before(9, 1)
 
-def test_insert_node_after_first_ll(ll):
-     ll.insert_after(1,"First")
-     expected = '{ 1 } -> { First } -> { Hello } -> { 1991 } -> { 6 } -> { 7 } -> NONE'
-     actual = ll.__str__()
-     assert expected == actual
+def test_insert_after():
+    ll = LinkedList(Node(10))
+    ll.head.next = Node(7)
+    ll.head.next.next = Node(2)
+    ll.head.next.next.next = Node(5)
+    ll.insert_after(2, 14)
+    actual = ll.to_string()
+    expected = '{ 10 } -> { 7 } -> { 2 } -> { 14 } -> { 5 } -> NONE'
+    assert actual == expected
 
+def test_insert_after_final_node():
+    ll = LinkedList(Node(10))
+    ll.head.next = Node(7)
+    ll.head.next.next = Node(2)
+    ll.insert_after(2, 14)
+    actual = ll.to_string()
+    expected = '{ 10 } -> { 7 } -> { 2 } -> { 14 } -> NONE'
+    assert actual == expected
+
+def test_insert_after_alerts_exception():
+    with pytest.raises(Exception):
+        ll = LinkedList(Node(10))
+        ll.head.next = Node(7)
+        ll.head.next.next = Node(2)
+        ll.head.next.next.next = Node(5)
+        ll.insert_after(6, 13)
 
 def test_insert_to_linked_list():
     # ll
