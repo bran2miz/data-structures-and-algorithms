@@ -129,6 +129,49 @@ def test_insert_after_alerts_exception():
         ll.head.next.next.next = Node(5)
         ll.insert_after(6, 13)
 
+# @pytest.mark.skip()
+def test_kth_from_end():
+    ll_kth_positive_integer = LinkedList()
+    ll_kth_positive_integer.insert(2)
+    ll_kth_positive_integer.insert(8)
+    ll_kth_positive_integer.insert(3)
+    ll_kth_positive_integer.insert(1)
+    assert ll_kth_positive_integer.kth_from_end(1) == 8
+
+def test_kth_from_end_negative_integer():
+    ll_kth_negative_integer = LinkedList()
+    ll_kth_negative_integer.insert(2)
+    ll_kth_negative_integer.insert(8)
+    ll_kth_negative_integer.insert(3)
+    ll_kth_negative_integer.insert(1)
+    ll_kth_negative_integer.kth_from_end(-1) == None
+
+def test_kth_from_end_greater():
+    ll_kth_index_error = LinkedList()
+    ll_kth_index_error.insert(2)
+    ll_kth_index_error.insert(8)
+    ll_kth_index_error.insert(3)
+    ll_kth_index_error.insert(1)
+    assert ll_kth_index_error.kth_from_end(6) == None
+
+def test_kth_from_end_length_is_one():
+    ll_kth_length_is_one = LinkedList()
+    ll_kth_length_is_one.insert(2)
+    ll_kth_length_is_one.insert(8)
+    ll_kth_length_is_one.insert(3)
+    ll_kth_length_is_one.insert(1)
+    assert ll_kth_length_is_one.kth_from_end(3) == 1
+
+def test_kth_from_end_middle_of_ll():
+    ll_kth_k_is_in_middle = LinkedList()
+    ll_kth_k_is_in_middle.insert(2)
+    ll_kth_k_is_in_middle.insert(8)
+    ll_kth_k_is_in_middle.insert(3)
+    ll_kth_k_is_in_middle.insert(1)
+    assert ll_kth_k_is_in_middle.kth_from_end(0) == 2
+    assert ll_kth_k_is_in_middle.kth_from_end(1) == 8
+    assert ll_kth_k_is_in_middle.kth_from_end(6) == None
+
 def test_insert_to_linked_list():
     # ll
     # node1
