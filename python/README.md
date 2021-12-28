@@ -14,6 +14,8 @@
 
 [Code Challenge 05](./code_challenges/linked-list/README.md)
 
+[Code Challenge 07](./code_challenges/linked-list/linked_list/README.md)
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.

@@ -91,3 +91,16 @@ class LinkedList:
                 current.next = new_node
             else:
                 raise Exception('Target value not found in LinkedList')
+
+    def kth_from_end(self, k):
+        if k < 0:
+            return IndexError
+        else:
+            current = self.head
+            values = []
+            while current:
+                values.append(current.value)
+                current = current.next
+            if k > len(values):
+                return None
+            else: return values[-k-1]
