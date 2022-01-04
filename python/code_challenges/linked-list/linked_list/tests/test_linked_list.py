@@ -197,16 +197,45 @@ def test_insert_to_linked_list():
     # [bananna] -> [apple] -> [pear]
     assert ll.head.value == 'bananna'
 
-def test_includes_in_ll(ll):
-    expected = True
-    actual = ll.includes(3000)
-    assert expected == actual
+def test_zip_lists():
+    ll1 = LinkedList()
+    ll1.insert(1)
+    ll1.append(3)
+    ll1.append(2)
+    ll2 = LinkedList()
+    ll2.insert(5)
+    ll2.append(9)
+    ll2.append(4)
+    zipped_list = LinkedList.linked_list_zip(ll1,ll2)
+    actual = zipped_list.__str__()
+    expected = '{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NONE'
+    assert actual == expected
+
+# def test_includes_in_ll(ll):
+#     expected = True
+#     actual = ll.includes(3000)
+#     assert expected == actual
 
 
-def test_includes_in_ll(ll):
-    expected = False
-    actual = ll.includes(400)
-    assert expected == actual
+# def test_includes_in_ll(ll):
+#     expected = False
+#     actual = ll.includes(400)
+#     assert expected == actual
+
+# def test_linked_list_zip_second_none():
+#     node1 = Node(1)
+#     node2 = Node(3)
+#     node3 = Node(2)
+#     node1.next = node2
+#     node2.next = node3
+#     ll_one = LinkedList()
+#     ll_one.head = node1
+#     ll_two = LinkedList()
+#     ll_two.head = node1
+#     ll_three = LinkedList()
+#     ll_three.linked_list_zip(ll_one, ll_two)
+#     assert ll_three.__str__() == "{ 1 } -> { 1 } -> { 3 } -> { 3 } -> { 2 } -> { 2 } -> NONE"
+
 
 
 @pytest.fixture
