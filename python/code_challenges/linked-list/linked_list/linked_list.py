@@ -104,3 +104,22 @@ class LinkedList:
             if k > len(values):
                 return None
             else: return values[-k-1]
+    def linked_list_zip(self, list_1, list_2):
+        if list_1 is None:
+          return list_2
+        if list_2 is None:          return list_1
+        expected_outcome = LinkedList()
+        current = list_1.head
+        second_current = list_2.head
+        while current and second_current:
+            expected_outcome.append(current)
+            expected_outcome.append(second_current)
+            current = current.next
+            second_current = second_current.next
+        while current:
+            expected_outcome.append(current)
+            current = current.next
+        while second_current:
+            expected_outcome.append(second_current)
+            second_current = second_current.next
+        return expected_outcome
