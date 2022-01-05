@@ -37,7 +37,7 @@ class LinkedList:
         except Exception as e:
             print(f'There was an unexpected error {e}')
 
-    def to_string(self):
+    def __str__(self):
         try:
             linked_list_output = ""
             if self.head is None:
@@ -104,22 +104,23 @@ class LinkedList:
             if k > len(values):
                 return None
             else: return values[-k-1]
-    def linked_list_zip(self, list_1, list_2):
-        if list_1 is None:
-          return list_2
-        if list_2 is None:          return list_1
-        expected_outcome = LinkedList()
-        current = list_1.head
-        second_current = list_2.head
-        while current and second_current:
-            expected_outcome.append(current)
-            expected_outcome.append(second_current)
-            current = current.next
-            second_current = second_current.next
-        while current:
-            expected_outcome.append(current)
-            current = current.next
-        while second_current:
-            expected_outcome.append(second_current)
-            second_current = second_current.next
-        return expected_outcome
+
+    def linked_list_zip(list_1, list_2):
+        if list_1.head == None and list_2.head == None:
+            return None
+        elif list_1.head is None:
+            return list_2
+        elif list_2.head is None:
+            return list_1
+        new_linked_list = LinkedList()
+        linked_list_1 = list_1.head
+        linked_list_2 = list_2.head
+        while linked_list_1 or linked_list_2:
+            if linked_list_1:
+                new_linked_list.append(linked_list_1.value)
+                linked_list_1 = linked_list_1.next
+            if linked_list_2:
+                new_linked_list.append(linked_list_2.value)
+                linked_list_2 = linked_list_2.next
+
+        return new_linked_list

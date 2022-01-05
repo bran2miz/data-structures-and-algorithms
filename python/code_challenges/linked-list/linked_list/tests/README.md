@@ -31,6 +31,8 @@ return the expected output list
 ## Collaborators
 
 Clarissa Pamonicutt
+Roger Huba
+
 
 Sources:
 Lecture
