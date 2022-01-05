@@ -1,6 +1,7 @@
 from linked_list.linked_list import Node, LinkedList
 import pytest
 
+
 def test_node_instance():
     node = Node(1, None)
     assert node.next == None
@@ -41,7 +42,7 @@ def test_insert_to_string():
     actual = test_out_insert_to_string.head.value
     expected = 'c'
     assert actual == expected
-    actual = test_out_insert_to_string.to_string()
+    actual = test_out_insert_to_string.__str__()
     expected = '{ c } -> { b } -> { a } -> NONE'
     assert actual == expected
 
@@ -74,7 +75,7 @@ def test_to_append_multiple_items():
     ll = LinkedList(Node(10))
     ll.append(3)
     ll.append(4)
-    actual = ll.to_string()
+    actual = ll.__str__()
     expected = '{ 10 } -> { 3 } -> { 4 } -> NONE'
     assert actual == expected
 
@@ -84,13 +85,13 @@ def test_insert_before():
     ll.head.next.next = Node(2)
     ll.head.next.next.next = Node(5)
     ll.insert_before(2, 8)
-    actual = ll.to_string()
+    actual = ll.__str__()
     expected = '{ 10 } -> { 7 } -> { 8 } -> { 2 } -> { 5 } -> NONE'
 
 def test_insert_before_first_node():
     ll = LinkedList(Node(10))
     ll.insert_before(10, 2)
-    actual = ll.to_string()
+    actual = ll.__str__()
     expected = '{ 2 } -> { 10 } -> NONE'
     assert actual == expected
 
@@ -108,7 +109,7 @@ def test_insert_after():
     ll.head.next.next = Node(2)
     ll.head.next.next.next = Node(5)
     ll.insert_after(2, 14)
-    actual = ll.to_string()
+    actual = ll.__str__()
     expected = '{ 10 } -> { 7 } -> { 2 } -> { 14 } -> { 5 } -> NONE'
     assert actual == expected
 
@@ -117,7 +118,7 @@ def test_insert_after_final_node():
     ll.head.next = Node(7)
     ll.head.next.next = Node(2)
     ll.insert_after(2, 14)
-    actual = ll.to_string()
+    actual = ll.__str__()
     expected = '{ 10 } -> { 7 } -> { 2 } -> { 14 } -> NONE'
     assert actual == expected
 
@@ -197,19 +198,85 @@ def test_insert_to_linked_list():
     # [bananna] -> [apple] -> [pear]
     assert ll.head.value == 'bananna'
 
-def test_zip_lists():
-    ll1 = LinkedList()
-    ll1.insert(1)
-    ll1.append(3)
-    ll1.append(2)
-    ll2 = LinkedList()
-    ll2.insert(5)
-    ll2.append(9)
-    ll2.append(4)
-    zipped_list = LinkedList.linked_list_zip(ll1,ll2)
-    actual = zipped_list.__str__()
-    expected = '{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NONE'
+def test_linked_list_zip():
+    test_list_1 = LinkedList()
+    test_list_1.insert(1)
+    test_list_1.insert(2)
+    test_list_1.insert(3)
+
+    test_list_2 = LinkedList()
+    test_list_2.insert(4)
+    test_list_2.insert(5)
+    test_list_2.insert(6)
+
+    res = LinkedList.linked_list_zip(test_list_1, test_list_2)
+    actual = res.__str__()
+    expected = "{ 3 } -> { 6 } -> { 2 } -> { 5 } -> { 1 } -> { 4 } -> NONE"
     assert actual == expected
+
+def test_one_list_empty():
+    test_list_1 = LinkedList()
+    test_list_2 = LinkedList()
+    test_list_2.insert(2)
+    test_list_2.append(4)
+    test_list_2.append(6)
+
+    actual = LinkedList.linked_list_zip(test_list_1, test_list_2).__str__()
+    expected = '{ 2 } -> { 4 } -> { 6 } -> NONE'
+    assert actual == expected
+
+def test_one_list_empty():
+    test_list_1 = LinkedList()
+    test_list_2 = LinkedList()
+    test_list_1.insert(2)
+    test_list_1.append(4)
+    test_list_1.append(6)
+
+    actual = LinkedList.linked_list_zip(test_list_1, test_list_2).__str__()
+    expected = '{ 2 } -> { 4 } -> { 6 } -> NONE'
+    assert actual == expected
+
+def test_first_list_short():
+    test_list_1 = LinkedList()
+    test_list_1.insert(1)
+    test_list_1.append(3)
+    test_list_2 = LinkedList()
+    test_list_2.insert(5)
+    test_list_2.append(9)
+    test_list_2.append(4)
+
+    actual = LinkedList.linked_list_zip(test_list_1, test_list_2).__str__()
+    expected = '{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 4 } -> NONE'
+    assert actual == expected
+
+def test_second_list_short():
+    test_list_1 = LinkedList()
+    test_list_1.insert(1)
+    test_list_1.append(3)
+    test_list_1.append(2)
+    test_list_2 = LinkedList()
+    test_list_2.insert(5)
+    test_list_2.append(9)
+
+    actual = LinkedList.linked_list_zip(test_list_1, test_list_2).__str__()
+    expected = '{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NONE'
+    assert actual == expected
+
+
+
+# def test_zip_lists():
+#     list_1 = LinkedList()
+#     list_1.insert(1)
+#     list_1.append(3)
+#     list_1.append(2)
+#     list_2 = LinkedList()
+#     list_2.insert(5)
+#     list_2.append(9)
+#     list_2.append(4)
+#     linked_list_zip = LinkedList.linked_list_zip(list_1,list_2)
+#     actual = linked_list_zip.__str__()
+#     expected = '{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NONE'
+#     assert actual == expected
 
 # def test_includes_in_ll(ll):
 #     expected = True
