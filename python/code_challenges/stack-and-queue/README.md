@@ -57,3 +57,11 @@ space: change based on the function ie push (O(n))
 **Peek**- view first Node of the queue. An exception is raised in the beginning in case of an empty queue.
 
 **isEmpty**- returns true when queue is empty; false if not empty.
+
+Collaborators:
+
+Alex Payne
+Eddie Ponce
+Connor Boyce
+Kassie Bradshaw
+Roger Huba
