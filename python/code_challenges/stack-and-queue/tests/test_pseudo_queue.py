@@ -38,6 +38,36 @@ def test_pseudo_queue_enqueue_multi():
     expected = 3
     assert actual == expected
 
+    with pytest.raises(Exception):
+        actual = pseudo_queue.dequeue()
 
+def test_pseudo_queue_enqueue_multi_two():
+    pseudo_queue = PseudoQueue()
+    pseudo_queue.enqueue(1)
+    pseudo_queue.enqueue(2)
+    pseudo_queue.enqueue(3)
 
+    actual = pseudo_queue.dequeue()
+    expected = 1
+    assert actual == expected
+
+    pseudo_queue.enqueue(6)
+    actual = pseudo_queue.dequeue()
+    expected = 2
+    assert actual == expected
+
+    actual = pseudo_queue.dequeue()
+    expected = 3
+    assert actual == expected
+
+    actual = pseudo_queue.dequeue()
+    expected = 6
+
+    with pytest.raises(Exception):
+        actual = pseudo_queue.dequeue()
+
+def test_pseudo_queue_is_empty():
+    pseudo_queue= PseudoQueue()
+    with pytest.raises(Exception):
+        pseudo_queue.dequeue()
 
