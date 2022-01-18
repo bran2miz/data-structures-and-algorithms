@@ -66,6 +66,55 @@ Connor Boyce
 Kassie Bradshaw
 Roger Huba
 
+## Pseudo Queue Code Challenge 11
+
+From the lecture, we were assigned the task to simulate a queue using only stacks. Because stacks use the FILO(First In Last Out) and LIFO (Last In First Out) principles, we had to first create two separate stacks, and then pop out all the of the first stack and push it into the second stack to return a queue.
+
+    ex. [3] <-first stack   [] <- second stack
+        [2]                 []
+        [1]                 []
+
+        [] .pop (3,2,1) ->  [1] <- second stack
+        []                  [2]
+        []                  [3]
+
+    expected output [1] -> [2] -> [3]
+
+### Challenge (Lab 11)
+
+The challenge was to create a new class named PsuedoQueue that:
+-utilized 2 Stack instances to create and manage the queue
+
+The PsuedoQueue class also implemented the *enqueue* and *dequeue* methods to:
+-insert value into the PseudoQueue, using a first-in, first-out approach.(enqueue)
+-extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+## Approach & Efficiency (Lab 11)
+
+The first thing that I did was figure out the visual.
+
+Once I understood the visual, I understood that so long as the first stack was **NOT** empty, we can use the new dequeue method to essentially pop out the value of the items in the first second and push them into the second stack.
+
+Similarly, so long as the second stack was not empty, we can use the enqueue method to pop out the second stack to return those items, but in a queue rather than a stack.
+
+Big O:
+time: O(1)
+space: O(n)
+
+### Solution
+
+![Testing](./Images/test_pseudo.png)
+
+![Pytest](./Images/pytest.png)
+
+### Collaborators
+
+Alex Payne
+Eddie Ponce
+Michael Greene
+Connor Bryce
+Roger Huba
+
 Sources:
 
 [Source](https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks)
