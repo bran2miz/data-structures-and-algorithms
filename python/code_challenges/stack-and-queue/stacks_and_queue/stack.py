@@ -5,8 +5,7 @@ class Stack:
         self.top = None
 
     def push(self, value):
-        self.top = Node(value)
-        return self.top
+        self.top = Node(value, self.top)
         # // INPUT <-- value to add, wrapped in Node internally
         # //OUTPUT <-- none
         # node = new Node(value)
@@ -22,13 +21,11 @@ class Stack:
     #    top <-- top.next
     #    temp.next <-- null
     #    return temp.value
-        try:
-            temp = self.top
-            self.top = None
-            return temp.value
-        except:
-            if self.top == None:
-                return Exception
+        if not self.top:
+            raise Exception
+        temp = self.top
+        self.top = self.top.next
+        return temp.value
 
 
 

@@ -65,3 +65,9 @@ Eddie Ponce
 Connor Boyce
 Kassie Bradshaw
 Roger Huba
+
+Sources:
+
+[Source](https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks)
+
+[Source](https://towardsdatascience.com/implementation-of-queue-from-two-stacks-in-python-data-structure-c35da025eaf6)
