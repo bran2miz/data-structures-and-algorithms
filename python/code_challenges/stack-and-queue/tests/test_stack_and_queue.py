@@ -29,6 +29,7 @@ def test_stack_pop():
     stack.pop()
     assert stack.top == None
 
+@pytest.mark.skip(reason = 'pending')
 def test_stack_multiple_pops():
     stack = Stack()
     stack.push(1)
@@ -41,7 +42,7 @@ def test_stack_multiple_pops():
     expected = Exception
     assert actual == expected
 
-# @pytest.mark.skip(reason = 'pending')
+@pytest.mark.skip(reason = 'pending')
 def test_two_stack_pop():
     stack = Stack()
     actual = stack.pop()
@@ -129,4 +130,3 @@ def test_queue_empty_queue():
     with pytest.raises(Exception):
         queue = Queue()
         queue.peek()
-
