@@ -68,6 +68,8 @@ Roger Huba
 
 ## Pseudo Queue Code Challenge 11
 
+[GitHub Link](https://github.com/bran2miz/data-structures-and-algorithms/tree/main/python/code_challenges/stack-and-queue)
+
 From the lecture, we were assigned the task to simulate a queue using only stacks. Because stacks use the FILO(First In Last Out) and LIFO (Last In First Out) principles, we had to first create two separate stacks, and then pop out all the of the first stack and push it into the second stack to return a queue.
 
     ex. [3] <-first stack   [] <- second stack
