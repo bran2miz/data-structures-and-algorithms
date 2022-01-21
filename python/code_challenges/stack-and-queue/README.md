@@ -110,8 +110,11 @@ space: O(n)
 ![Pytest](./Images/pytest.png)
 
 ## Animal Shelter Code Challenge 12
+[PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/47)
+
 
 ### Challenge (Lab 12)
+
 
 ## Approach & Efficiency (Lab 12)
 ![Whiteboard](./Images/whiteboard_animal_shelter.png)
