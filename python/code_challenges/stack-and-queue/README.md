@@ -109,6 +109,14 @@ space: O(n)
 
 ![Pytest](./Images/pytest.png)
 
+## Animal Shelter Code Challenge 12
+
+### Challenge (Lab 12)
+
+## Approach & Efficiency (Lab 12)
+![Whiteboard](./Images/whiteboard_animal_shelter.png)
+
+
 ### Collaborators
 
 Alex Payne
