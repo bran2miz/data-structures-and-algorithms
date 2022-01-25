@@ -111,7 +111,7 @@ space: O(n)
 
 ## Animal Shelter Code Challenge 12
 
-[PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/47)
+[PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/49)
 
 
 ### Challenge (Lab 12)
