@@ -110,15 +110,28 @@ space: O(n)
 ![Pytest](./Images/pytest.png)
 
 ## Animal Shelter Code Challenge 12
+
 [PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/47)
 
 
 ### Challenge (Lab 12)
 
+The challenge for this lab was to create a class called Animal Shelter which holds only cat and dogs. The shelter operates using a first-in, first-out approach.
 
-## Approach & Efficiency (Lab 12)
+### Approach & Efficiency (Lab 12)
+
 ![Whiteboard](./Images/whiteboard_animal_shelter.png)
 
+Big O Space: O(n) Time: O(1)
+
+### Solution(Lab 12)
+
+enqueue: takes one argument that if not equal to dog or cat will return none it will then push that animal into the top of stack one while giving the out stack the new value if needed
+
+dequeue: will take one argument and if that argument is not equal to dog or cat return none if the argument is cat and the top value equals cat op that current top the same applies to if the argument is dog
+
+![Testing](./Images/solution.png)
+![Pytest](./Images/pytest-animal-shelter.png)
 
 ### Collaborators
 
@@ -127,6 +140,7 @@ Eddie Ponce
 Michael Greene
 Connor Bryce
 Roger Huba
+TA's
 
 Sources:
 
