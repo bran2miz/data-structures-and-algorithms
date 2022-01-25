@@ -82,7 +82,7 @@ From the lecture, we were assigned the task to simulate a queue using only stack
 
     expected output [1] -> [2] -> [3]
 
-### Challenge (Lab 11)
+### Challenge (Challenge 11)
 
 The challenge was to create a new class named PsuedoQueue that:
 -utilized 2 Stack instances to create and manage the queue
@@ -91,7 +91,7 @@ The PsuedoQueue class also implemented the *enqueue* and *dequeue* methods to:
 -insert value into the PseudoQueue, using a first-in, first-out approach.(enqueue)
 -extracts a value from the PseudoQueue, using a first-in, first-out approach.
 
-## Approach & Efficiency (Lab 11)
+## Approach & Efficiency (Challenge 11)
 
 The first thing that I did was figure out the visual.
 
@@ -113,18 +113,17 @@ space: O(n)
 
 [PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/49)
 
-
-### Challenge (Lab 12)
+### Challenge (Challenge 12)
 
 The challenge for this lab was to create a class called Animal Shelter which holds only cat and dogs. The shelter operates using a first-in, first-out approach.
 
-### Approach & Efficiency (Lab 12)
+### Approach & Efficiency (Challenge 12)
 
 ![Whiteboard](./Images/whiteboard_animal_shelter.png)
 
 Big O Space: O(n) Time: O(1)
 
-### Solution(Lab 12)
+### Solution(Challenge 12)
 
 enqueue: takes one argument that if not equal to dog or cat will return none it will then push that animal into the top of stack one while giving the out stack the new value if needed
 
@@ -132,6 +131,31 @@ dequeue: will take one argument and if that argument is not equal to dog or cat 
 
 ![Testing](./Images/solution.png)
 ![Pytest](./Images/pytest-animal-shelter.png)
+
+## Stack and Queue Brackets
+
+### Challenge Summary (Challenge 13)
+
+The code challenge today was to create function called validate brackets that takes in a given string with brackets and returns a boolean, representing whether or not the brackets in the string are balanced
+
+## Whiteboard Process (Challenge 13)
+
+![White Board](./Images/whiteboard-13.png)
+
+## Approach & Efficiency (Challenge 13)
+
+My classmates and I first approached this code challenge with if/else statements to traverse through the string and check if the current character in the string is an open bracket. If not it will return a boolean of False.
+
+However, another method that someone mentioned was to create a dictionary, traverse through the dictionary, and check the opening and closing brackets.
+
+Big O:
+time: O(n)
+space: O(1)
+
+## Solution (Challenge 13)
+
+![Testing](./Images/bracket-solution.png)
+![Pytest](./Images/pytest-brackets.png)
 
 ### Collaborators
 
