@@ -38,7 +38,8 @@ class Stack:
     #    return top.value
         if self.top == None:
             raise Exception
-        return self.top.value
+        else:
+            return self.top.value
 
     def isEmpty(self):
         #         ALGORITHM isEmpty()
@@ -47,5 +48,6 @@ class Stack:
 
     # return top = NULL
         return self.top is None
+
 
 
