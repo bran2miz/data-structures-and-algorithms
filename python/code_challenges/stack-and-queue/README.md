@@ -136,6 +136,8 @@ dequeue: will take one argument and if that argument is not equal to dog or cat 
 
 ### Challenge Summary (Challenge 13)
 
+[GitHub PR](https://github.com/bran2miz/data-structures-and-algorithms/pull/51)
+
 The code challenge today was to create function called validate brackets that takes in a given string with brackets and returns a boolean, representing whether or not the brackets in the string are balanced
 
 ## Whiteboard Process (Challenge 13)
