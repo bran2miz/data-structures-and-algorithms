@@ -81,4 +81,27 @@ def test_bt_search_tree_left_and_right():
     assert actual == expected
 
 def test_bt_search_tree_contains_true():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    bt.add('pear')
+    bt.add('banana')
+    actual = bt.contains('pear')
+    expected = True
+    assert actual == expected
 
+def test_bt_search_tree_contains_false():
+    root = Node('orange')
+    bt = BinarySearchTree(root)
+    bt.add('apple')
+    bt.add('pear')
+    bt.add('orange')
+    actual = bt.contains('strawberry')
+    expected = False
+    assert actual == expected
+
+def test_bt_search_tree_empty_false():
+    bt = BinarySearchTree()
+    actual = bt.contains('orange')
+    expected = False
+    assert actual == expected
