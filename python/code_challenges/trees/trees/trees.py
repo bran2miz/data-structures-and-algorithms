@@ -20,10 +20,10 @@ class BinaryTree:
         def walk(root):
             if root is None:
                 return
-
-            values.append(root.value)
-            walk(root.left)
-            walk(root.right)
+            if root:
+                values.append(root.value)
+                walk(root.left)
+                walk(root.right)
 
         walk(self.root)
         return values
@@ -58,6 +58,26 @@ class BinaryTree:
         walk(self.root)
         return values
 
+    def max_tree(self):
+
+        if self.root == None:
+            raise Exception('Sorry this Tree is currently empty')
+
+        z = {'max_value': 0}
+
+        def walk(node, z):
+            if node:
+                walk(node.left,z)
+                walk(node.right,z)
+                if node.value > z['max_value']:
+                    z['max_value'] = node.value
+        walk(self.root, z)
+        return z['max_value']
+
+
+
+
+
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         def walk(root):
@@ -72,6 +92,7 @@ class BinarySearchTree(BinaryTree):
                 else:
                     walk(root.right)
         walk(self.root)
+
     def contains(self, value):
         def walk(root):
             if root is None:

@@ -29,6 +29,28 @@ Isaiah Burkes
 Eddie Ponce
 Connor Boyce
 
+### Challenge Summary (Code Challenge 16)
+
+The code challenge was to create a function that found the maximum value within a binary tree.
+
+## Whiteboard Process
+
+![Whiteboard](./images/whiteboard-tree-max.png)
+
+## Approach & Efficiency (Code Challenge 16)
+
+The approach that I took was first to create a function called max_tree that implements a new dictionary with a starting value of 0. Using recursion, I created another function called walk that took a node and value z as arguments. I utilized the pre-order function to refractor the code and implement in my walk function.
+
+Big O:
+time: O(n)
+space: O(1)
+
+## Solution
+
+![Testing](./images/challenge-16-test.png)
+
+![Pytest](./images/challenge-16-pytest.png)
+
 ## Sources
 
 [Source 1](https://stackoverflow.com/questions/16505568/inserting-a-value-into-a-binary-search-tree-in-python)
@@ -36,3 +58,5 @@ Connor Boyce
 [Source 2](https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971081089764103109971051084699111109/Python-program-to-insert-an-element-into-binary-search-tree.php)
 
 [Source 3](https://codereview.stackexchange.com/questions/201517/bst-implementation-for-insert-put-and-contain-search-in-python)
+
+[Source 4](https://pybit.es/articles/python-subclasses/)
