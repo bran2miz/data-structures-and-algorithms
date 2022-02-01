@@ -1,6 +1,7 @@
 from trees.trees import BinarySearchTree
 from trees.node import Node
 from trees.trees import BinaryTree
+import pytest
 
 def test_bt_empty_tree():
     bt = BinaryTree()
@@ -105,3 +106,47 @@ def test_bt_search_tree_empty_false():
     actual = bt.contains('orange')
     expected = False
     assert actual == expected
+
+def test_bt_ha():
+    one = Node(1)
+    three = Node(3)
+    four = Node(4)
+    bt = BinaryTree(one)
+    one.left = four
+    one.right = three
+
+    assert one.left == bt.root.left
+    assert one.right == three
+    max_value = bt.max_tree()
+    assert max_value == 4
+
+
+def test_bt_max_right():
+    root = Node(5)
+    root.left = Node(3)
+    root.right = Node(6)
+    bt = BinaryTree(root)
+
+    assert bt.max_tree() == 6
+
+def test_bt_max_is_empty():
+    bt = BinaryTree()
+    with pytest.raises(Exception):
+        bt.max_tree()
+
+def test_bt_max_multiple():
+    root = Node(3)
+    root.left = Node(7)
+    root.right = Node(2)
+    root.right.right = Node (11)
+    bt = BinaryTree(root)
+    assert bt.max_tree() == 11
+
+def test_bt_max_complex():
+    root = Node(5)
+    root.left = Node(7)
+    root.right = Node(8)
+    root.left.left = Node(4)
+    root.left.right = Node(13)
+    bt = BinaryTree(root)
+    assert bt.max_tree() == 13
