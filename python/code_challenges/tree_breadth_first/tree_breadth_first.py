@@ -1,5 +1,5 @@
+# from stack_and_queue.stacks_and_queue.queue import Queue
 from code_challenges.stack_and_queue.stacks_and_queue.queue import Queue
-
 def breadth_first(tree):
     list = []
     breadth = Queue()
