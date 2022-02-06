@@ -1,4 +1,4 @@
-from trees.node import Node
+from code_challenges.trees.trees.node import Node
 
 class BinaryTree:
     def __init__(self, root=None):

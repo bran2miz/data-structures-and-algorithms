@@ -1,4 +1,3 @@
-
 from trees.trees import BinarySearchTree
 from trees.node import Node
 from trees.trees import BinaryTree
@@ -151,7 +150,3 @@ def test_bt_max_complex():
     root.left.right = Node(13)
     bt = BinaryTree(root)
     assert bt.max_tree() == 13
-
-def test_breadth_first():
-    tree = BinaryTree()
-    assert breadth_first(tree) == []
