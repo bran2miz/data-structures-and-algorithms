@@ -1,5 +1,7 @@
 # Code Challenge 18
 
+[PR URL](https://github.com/bran2miz/data-structures-and-algorithms/pull/61)
+
 ## Challenge Summary
 
 Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
@@ -23,3 +25,13 @@ This KaryTree was implemented into the fizzbuzz function, which essentially will
 ![Testing](./images/testing.png)
 
 ![Pytest](./images/pytest.png)
+
+## Credits and Collaborators
+
+Eddie Ponce
+
+Alex Payne
+
+Roger Huba
+
+TA's
