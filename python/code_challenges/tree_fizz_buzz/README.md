@@ -25,3 +25,13 @@ This KaryTree was implemented into the fizzbuzz function, which essentially will
 ![Testing](./images/testing.png)
 
 ![Pytest](./images/pytest.png)
+
+## Credits and Collaborators
+
+Eddie Ponce
+
+Alex Payne
+
+Roger Huba
+
+TA's
