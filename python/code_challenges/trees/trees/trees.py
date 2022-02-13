@@ -74,10 +74,6 @@ class BinaryTree:
         walk(self.root, z)
         return z['max_value']
 
-
-
-
-
 class BinarySearchTree(BinaryTree):
     def add(self, value):
         def walk(root):
@@ -105,3 +101,28 @@ class BinarySearchTree(BinaryTree):
                 return walk(root.right)
         return walk(self.root)
 
+
+class KaryTree:
+    def __init__(self, root=None):
+        self.root = root
+
+    def add(self, value):
+        node = Node(value)
+        if self.root is None:
+            self.root = node
+
+        def walk(root, curr_node):
+            if root is None:
+                return
+
+            if curr_node.value < root.value:
+                if root.left:
+                    walk(root.left, curr_node)
+                else:
+                    root.left = curr_node
+            else:
+                if root.right:
+                    walk(root.right, curr_node)
+                else:
+                    root.right = curr_node
+        walk(self.root, node)
