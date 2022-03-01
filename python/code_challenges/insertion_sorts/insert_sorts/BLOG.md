@@ -120,6 +120,8 @@ The while loop is tried once again. Both conditions are not met, where j = 1 >= 
 
 Finally, the new temp is equal to the array at j + 1. Because our new value of j = 1, temp = 1 + 1 = 2. The value at the index of 2 is 16, so now the new value at that position is 15.
 
+New Pass = [4, 8, 15, 16, 23, 42]
+
 ![Pass 5](./images/pass-5.png)
 
 ## Approach & Efficiency
