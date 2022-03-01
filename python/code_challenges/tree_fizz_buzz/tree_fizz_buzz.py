@@ -4,18 +4,18 @@ def fizz_buzz(tree):
     if tree.root is None:
         return None
 
-    k = KaryTree()
+    kary_tree = KaryTree()
     def walk(root):
         if root is None:
             return None
         if root.value % 5 == 0 and root.value % 3 == 0:
-            k.add('fizzbuzz')
+            kary_tree.add('fizzbuzz')
         elif root.value % 3 == 0:
-            k.add('fizz')
+            kary_tree.add('fizz')
         elif root.value % 5 == 0:
-            k.add('buzz')
+            kary_tree.add('buzz')
         else:
-            k.add(str(root.value))
+            kary_tree.add(str(root.value))
 
     walk(tree.root)
-    return k
+    return kary_tree
