@@ -1,6 +1,6 @@
 # Merge Sort
 
-[PR Link]()
+[PR Link](https://github.com/bran2miz/data-structures-and-algorithms/pull/68)
 
 Merge Sort divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
 
