@@ -1,6 +1,6 @@
 # Merge Sort
 
-[PR Link]()
+[PR Link](https://github.com/bran2miz/data-structures-and-algorithms/pull/68)
 
 Merge Sort divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
 
@@ -83,15 +83,19 @@ Now that the left array are all separated, we need to merge them together in seq
 
 We first check to see if the left at [i] is less than the right at [j]. The left[0] =4 < right[0] = 23 so we then enter the if statement. The left[i] will now replace the array[k]. Thus, left[0]= 4 will now replace the array[0] which is 4, so the number remains the same. Variable i will also increment by 1, so i=0 + 1 = 1. Variable k will also increment by 1, so k = 0 + 1 = 1.
 
-We then try to enter the while loop again. However, it will now end because the variable i is now equal to 1 which is not less than 1. Now we will verify whether i = left.length. Variable i is now 1 = left.length. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the merged array: [4, 23].
+We then try to enter the while loop again. However, it will now end because the variable i is now equal to 1 which is not less than 1. Now we will verify whether i = left.length. Variable i is now 1 = left.length. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the merged array: **[4, 23]**.
 
 #### Merge Left (All of left array merged)
 
+![Merge All Left](./images/merge-1.png)
+
 Now that we merged the right portion of the original left array, we now need to merge all of it. We will merge the left array, [8], and the right array, [4, 23]. We first declare variables, i, j, and k, and set them to 0. Entering the while loop, we will then verify whether i and j are less than the length of the left and the right array. i = 0 which is less than left.length = 1 and j = 0 which is less than right.length = 2. Both check out so we enter the while loop. We first check to see if the left at [i] is less than the right at [j]. The left at i = 8 which is not less than the right at j = 4. We will skip and move to the else statement, where we set the array at k (0) = 8 to the right at the index of j which is 0 (right[0] = 4). 4 will now replace the number 8 at the index of 0. Variable j will also increment by 1, so j = 0 + 1 = 1. Variable k will also increment by 1, so k = 0 + 1 = 1.
+
+new pass: **[4, 8, 23]**
 
 We then try to enter the while loop again. i = 0 which is less than left.length = 1 and j = 1 which is less than right.length = 2. Both check out so we enter the while loop. We first check to see if the left at [i] is less than the right at [j]. The left at i = 0 is 8, which is less than the right at j = 23, so we then enter the if statement. We set the array at the index of 1 = 8 to equate the left[i = 0] = 8; the number at index 1 remains the same in the array. i is incremented to 1 and k is incremented by 2.
 
-We then try to enter the while loop again. i = 1 which is not less than left.length. Then it exits out of the while loop. Now we will verify whether i = left.length. Variable i is now 1 = left.length. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the merged array: [4, 8, 23].
+We then try to enter the while loop again. i = 1 which is not less than left.length. Then it exits out of the while loop. Now we will verify whether i = left.length. Variable i is now 1 = left.length. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the merged array: **[4, 8, 23]**.
 
 #### Step 2: Merge Sort the Separated Arrays (Right)
 
@@ -111,13 +115,15 @@ Now that the integers of the right array are all separated, we need to merge the
 
 We first check to see if the left at [i] is less than the right at [j]. The left[0] =16 which is not less than the right[0] = 15. Therefore, it will now enter the else statement. The array at the index of k = 0 is now replaced with the right value at the index of j at 0. arr[0] = 16 is replaced by right[0] = 15.  Variable i will also increment by 1, so i=0 + 1 = 1. Variable k will also increment by 1, so k = 0 + 1 = 1.
 
-We then try to enter the while loop again. However, it will now end because the variable i is now equal to 1 which is not less than 1. Now we will verify whether i = left.length. Variable i is now 1 = left.length = 1. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the new merged array: [15, 16].
+We then try to enter the while loop again. However, it will now end because the variable i is now equal to 1 which is not less than 1. Now we will verify whether i = left.length. Variable i is now 1 = left.length = 1. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the new merged array: **[15, 16]**.
 
 #### Merge Right (All of right array merged)
 
+![Merge All Right](./images/merge-2.png)
+
 Now that we merged the right portion of the original right array, we now need to merge all of it. We will merge the left array, [42], and the right array, [15, 16]. We first declare variables, i, j, and k, and set them to 0. Entering the while loop, we will then verify whether i and j are less than the length of the left and the right array. i = 0 which is less than left.length = 1 and j = 0 which is less than right.length = 2. Both check out so we enter the while loop. We first check to see if the left at [i] is less than the right at [j]. The left at i([0]) = 42 which is not less than the right at j([0]) = 15. We will skip and move to the else statement, where we set the array at k (0) = 42 to the right at the index of j which is 0 (right[0] = 15). 15 will now replace the number 42 at the index of 0. Variable j will also increment by 1, so j = 0 + 1 = 1. Variable k will also increment by 1, so k = 0 + 1 = 1.
 
-new pass: [15, 42, 16]
+new pass: **[15, 42, 16]**
 
 We then try to enter the while loop again. i = 0 which is less than left.length = 1 and j = 1 which is less than right.length = 2. Both check out so we enter the while loop. We first check to see if the left at [i] is less than the right at [j]. The left at i = 0 is 42, which is not less than the right at j([1]) = 16, so we then enter the else statement. We will set the array at k (1) = 42 to the right at the index of j which is 1 (right[1] = 16). 16 will now replace the number 42 at the index of 1. Variable j will also increment by 1, so j = 1 + 1 = 2. Variable k will also increment by 1, so k = 1 + 1 = 2.
 
@@ -127,4 +133,29 @@ We then try to enter the while loop again. j = 2 which is not less than left.len
 
 Merge(left = [4, 8, 23], right= [15, 16, 42], arr= [4, 8, 23, 15, 16, 42])
 
-We now have two arrays that are in sequential order. We must now combine the two arrays using the merge method.
+We now have two arrays that are in sequential order. We must now combine the two arrays using the merge method. We first declare variables, i, j, and k, and set them to 0. Entering the while loop, we will then verify whether i and j are less than the length of the left and the right array. i = 0 which is less than left.length = 3 and j = 0 which is less than right.length = 3. Both check out so we enter the while loop. We first check to see if the left at [i] is less than the right at [j]. The left at i = 4 which is less than the right at j = 15. We then enter the for loop. The array at 0, which is 4, is now replaced by the left[i=0] = 4, maintaining the same position. Variable i will also increment by 1, so i = 0 + 1 = 1. Variable k will also increment by 1, so k = 0 + 1 = 1.
+
+We now will re-enter the while loop where i = 1. We will then verify whether i and j are less than the length of the left and the right array. i = 1 which is less than left.length = 3 and j = 0 which is less than right.length = 3. Both check out so we enter the while loop. We then check to see if the left at [i] is less than the right at [j]. The left at i=1 is 8 which is less than the right at j= 0 = 15. We then enter the for loop. The array at k = 1, which is 8, is now replaced by the left[i=1] = 8, maintaining the same position. Variable i will also increment by 1, so i = 1 + 1 = 2. Variable k will also increment by 1, so k = 1 + 1 = 2.
+
+We now will re-enter the while loop where i = 2. We will then verify whether i and j are less than the length of the left and the right array. i = 2 which is less than left.length = 3 and j = 0 which is less than right.length = 3. Both check out so we enter the while loop. We then check to see if the left at [i] is less than the right at [j]. The left at i=2 is 23 which is not less than the right at j= 0 = 15, so we then enter the else statement. We will set the array at k (2) = 23 to the right at the index of j which is 0 (right[0] = 15). 15 will now replace the number 23 at the index of 2. Variable j will also increment by 1, so j = 0 + 1 = 1. Variable k will also increment by 1, so k = 2 + 1 = 3.
+
+new pass: **[4, 8, 15, 23, 16, 42]**
+
+We now will re-enter the while loop where i = 2 and j = 1. We will then verify whether i and j are less than the length of the left and the right array. i = 2 which is less than left.length = 3 and j = 1 which is less than right.length = 3. Both check out so we enter the while loop. We then check to see if the left at [i] is less than the right at [j]. The left at i=2 is 23 which is not less than the right at j= 1 = 16, so we then enter the else statement. We will set the array at k (3) = 23 to the right at the index of j which is 1 (right[1] = 16). 16 will now replace the number 23 at the index of 3. Variable j will also increment by 1, so j = 1 + 1 = 2. Variable k will also increment by 1, so k = 3 + 1 = 4.
+
+new pass: **[4, 8, 15, 16, 23, 42]**
+
+We then try to enter the while loop again. However, it will now end because the variable i is now equal to 3 which is not less than 3. Now we will verify whether i = left.length. Variable i is now 3 = left.length = 3. It finally will set the remaining entries in array to remaining values in right. We finally end up getting the new merged array: **[4, 8, 15, 16, 23, 42])**.
+
+## Approach & Efficiency
+
+BigO:
+
+time: O(N^2)
+space: 0(1) the variables are independent from the array length.
+
+## Testing
+
+![Tests](./images/tests.png)
+
+![Pytest](./images/pytest.png)
