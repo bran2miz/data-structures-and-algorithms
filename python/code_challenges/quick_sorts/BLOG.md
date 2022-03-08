@@ -134,3 +134,9 @@ New Pass: [4, 8, 15, 16, 23, 42]
 The approach that I took was to first figure out what exactly was a quick sort method and how it worked. Using several helpful information from classmates and the lovely internet, I was able to figure out how it all works.
 
 The Big O space is O(log n), due to the fact that number of temp variables that are made is proportional to the number of recursions. The Big O time would be O(n^2), because it only happens when the pivot value is either highest or lowest element in the array.
+
+## Credits and Collaborators
+
+[Source 1](https://www.programiz.com/dsa/quick-sort)
+
+Eddie Ponce
