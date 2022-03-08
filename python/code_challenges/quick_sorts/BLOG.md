@@ -1,6 +1,6 @@
 # Quick Sort
 
-[PR Link](https://github.com/bran2miz/data-structures-and-algorithms/pull/68)
+[PR Link](https://github.com/bran2miz/data-structures-and-algorithms/pull/70)
 
 Quick Sort does the opposite of merge sort in that it will compare the left to the pivot number, and all the integers through the array in between. If one of the integers is less than the pivot, that position is "swapped" with the left integer(or the second pointer). However, if none of the numbers in between are less than the pivot, that pivoted integer will switch with the left at whatever index. This will continue until all numbers are sorted and in sequential order.
 
