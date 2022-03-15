@@ -1,6 +1,7 @@
 # Hashtables
 Today we learned about hashtables.
 
+```python
 Key = "Cat"
 Value = "Josie"
 
@@ -11,6 +12,7 @@ Value = "Josie"
 69648 % 1024 = 16
 
 Key gets placed in index of 16. 
+```
 
 ## Challenge
 
@@ -42,7 +44,7 @@ Returns: Index in the collection for that key
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-This assignment was pretty difficult as we were not given much starter code. I first looked online for some examples of how to incorporate linked list into my approach. Once I was able to get a better grasp on hashtables, it became easier to manage code. The approach is O(1) time complexity and O(n) space complexity.
+This assignment was pretty difficult as we were not given much starter code. I first looked online for some examples of how to incorporate linked list into my approach. Once I was able to get a better grasp on hashtables, it became easier to manage code. The Big O approach is O(1) time complexity and O(n) space complexity.
 
 
 ## API
@@ -63,4 +65,16 @@ The Contains method will accept a key, and return a bool on if that key exists i
 GetHash()
 The GetHash will accept a key as a string, conduct the hash, and then return the index of the array where the key/value should be placed.
 
-https://www.youtube.com/watch?v=zHi5v78W1f0
+
+## Credits and Collaborators
+
+Alex Payne
+
+Michael Greene
+
+Eddie Ponce
+
+Connor Boyce
+
+[Source](https://www.youtube.com/watch?v=zHi5v78W1f0)
+
