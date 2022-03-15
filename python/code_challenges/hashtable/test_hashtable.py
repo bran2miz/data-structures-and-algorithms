@@ -1,46 +1,74 @@
 from hashtable import Hashtable
-import random
 
-def test_hashtable_add_function():
+import pytest
+
+def test_hashtable():
     hashtable = Hashtable()
-    hashtable.add('key', 'value')
-    assert hashtable.contains('key') == True
+    hashtable.set('key', 24)
+    expected = True 
+    actual = hashtable.contains('key') == True
+    assert actual == expected
 
-def test_hashtable_get_function():
+def test_get_key():
     hashtable = Hashtable()
-    hashtable.add('key', 'value')
-    assert hashtable.get('key') == 'value'
+    hashtable.set('key', 24)
+    expected = 24
+    actual = hashtable.get('key')
+    assert actual == expected
 
-def test_hashtable_get_none():
+def test_no_hash_in_table():
     hashtable = Hashtable()
-    assert hashtable.get('key') is None
+    hashtable.set('key', 8)
+    expected = None
+    actual = hashtable.get('value')
+    assert actual == expected
 
-def test_hashtable_contains_none():
+def test_key_list():
     hashtable = Hashtable()
-    assert hashtable.contains('key') == False
+    hashtable.set('k', 8)
+    hashtable.set('e', 7)
+    hashtable.set('y', 6)
+    hashtable.set('a', 9)
+    hashtable.set('b', 2)
+    actual = hashtable.keys()
+    expected = ['k', 'a', 'b', 
+    'y', 'e']
+    assert actual == expected
 
-def test_hashtable_add_contains_value_collision():
+def test_collision():
     hashtable = Hashtable()
-    hashtable.add('key', 'value')
-    hashtable.add('yke', 'yek value')
-    assert hashtable.contains('yke') is True
-    assert hashtable.contains('yke') is True
-    assert hashtable.hash('key') == hashtable.hash('yke')
+    hashtable.set('key', 10)
+    hashtable.set('kye', 11)
 
+    actual = hashtable.contains('key')
+    expected = True
+    assert actual == expected
 
-# Successfully retrieve a value from a bucket within the hashtable that has a collision
-def test_hashtable_add_get_value_collision():
+    actual = hashtable.contains('kye')
+    expected = True
+    assert actual == expected
+
+def test_collision_two():
     hashtable = Hashtable()
-    hashtable.add('key', 'value')
-    hashtable.add('yek', 'yek value')
-    assert hashtable.get('key') == 'value'
-    assert hashtable.get('yek') == 'yek value'
-    assert hashtable.hash('key') == hashtable.hash('yek')
+    hashtable.set('value', 20)
+    hashtable.set('vuela', 21)
+    hashtable.set('eluav', 22)
 
-# Successfully hash a key to an in-range value
-def test_hashtable_hash_in_range():
-    hashtable_size=1024
-    hashtable = Hashtable(hashtable_size)
-    random_keys = [''.join([chr(random.randint(32, 127)) for char in range(random.randint(0,30))]) for _ in range(1000)]
-    for key in random_keys:
-        assert hashtable.hash(key) in range(hashtable_size)
+    actual = hashtable.get('value')
+    expected = 20
+    assert actual == expected
+
+    actual = hashtable.get('vuela')
+    expected = 21
+    assert actual == expected
+
+    actual = hashtable.get('eluav')
+    expected = 22
+    assert actual == expected
+
+def test_hashtable_two():
+    hashtable = Hashtable()
+    hashtable.set('value', 22)
+    expected = True
+    actual = hashtable.contains('value') == True
+    assert actual == expected
