@@ -1,5 +1,7 @@
 # Challenge Summary
 
+[Pull Request Link](https://github.com/bran2miz/data-structures-and-algorithms/pull/74)
+
 The challenge today was to write a function that locates the first repeated word in a hashmap.
 
 ## Whiteboard Process
