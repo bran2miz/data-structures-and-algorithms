@@ -21,3 +21,11 @@ space: O(n)
 ![Testing](./images/test.png)
 
 ![Pytest](./images/pytest.png)
+
+## Credits and Collaborators
+
+Alex Payne
+
+Connor Boyce
+
+Eddie Ponce
