@@ -18,3 +18,13 @@ Big O would be the time complexity of O(1) because time is constant. The space c
 
 ![Pytest](./images/pytest.png)
 
+## Credits and Collaborators
+
+Alex Payne
+
+Connor Boyce
+
+Eddie Ponce
+
+[Source 1](https://www.w3schools.com/python/ref_set_intersection.asp)
+
