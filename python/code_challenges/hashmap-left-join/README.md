@@ -33,3 +33,15 @@ space: O(1)
 ## Solution
 
 ![White Board](./images/whiteboard.png)
+
+## Credits and Collaborators
+
+Connor Boyce
+
+Eddie Ponce
+
+Alex Payne
+
+Roger Huba
+
+
