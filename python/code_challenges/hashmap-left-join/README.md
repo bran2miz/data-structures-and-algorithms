@@ -1,5 +1,7 @@
 # Hashmap LEFT JOIN
 
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/78)
+
 We were assigned the task to implement a simplified LEFT JOIN for two hashmaps. One of examples that we were given were certain words with their accompanied synonym and antonym.
 
 ## Challenge
