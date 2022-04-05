@@ -56,3 +56,17 @@ Roger Huba
 [Source](https://python-course.eu/applications-python/graphs-python.php)
 
 [Source](https://www.educative.io/edpresso/how-to-implement-a-graph-in-python)
+
+## Code Challenge 36 Graph Breadth First
+
+Implement a breadth-first traversal on a graph.
+
+## Whiteboard Process
+
+![WhiteBoard](./images/whiteboard.png)
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
