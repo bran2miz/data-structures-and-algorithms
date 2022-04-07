@@ -59,14 +59,51 @@ Roger Huba
 
 ## Code Challenge 36 Graph Breadth First
 
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/83)
+
 Implement a breadth-first traversal on a graph.
 
 ## Whiteboard Process
 
 ![WhiteBoard](./images/whiteboard.png)
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+## Approach & Efficiency (CC 36)
+
+Base Case first:
+if there are no vertices, return an empty list.
+
+- Declare queue, lists as an empty list, and visited as set()
+
+- Enqueue the root.
+
+- Add the root to the visited set.
+
+- Enter a while loop so long as the queue is not empty; runs until there are no more nodes in our queue.
+
+- Dequeue the front node and then check to see if it has any children.
+
+- if there are children of the node we are currently looking at, we want to add them to visited set.
+
+- Place any of its children that have not yet been visited into the queue.
+
+- return the list of nodes. This list will contain, in order, all the nodes that were traversed.
+
+BigO:
+time: O(v+e) the v is the number of vertices and the e represents the number of edges
+space: O(v)
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+
+![Tests](./images/test.png)
+
+![Pytest](./images/pytest.png)
+
+## Credit and Collaborators
+
+Eddie Ponce
+
+Alex Payne
+
+Michael Greene
+
+Roger Huba
