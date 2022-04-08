@@ -92,17 +92,26 @@ space: O(v)
 
 ## Code Challenge 37 Graph Business Trip
 
-[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/84)
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/85)
 
 ## Whiteboard Process (CC 37)
 
 ![WhiteBoard](./images/whiteboard-37.png)
 
 ## Approach & Efficiency (CC 37)
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+The approach at first seemed like to create a counter of sorts to traverse through the graph until you return the amount it will take to get to the destination. However, asking for TA assistance, it seemed like the best solution was to create almost a two pointer method. This method would have two pointers, traverse through the graph until the desired node has been visited and then we can return a boolean of true or false, with the amount accumulated.
+
+BigO:
+time: O(v+e)
+space: O(1)
 
 ## Solution (CC 37)
-<!-- Show how to run your code, and examples of it in action -->
+
+![Test](./images/test-37.png)
+
+![Pytest](./images/pytest-37.png)
+
 ## Credit and Collaborators
 
 Eddie Ponce
@@ -112,3 +121,5 @@ Alex Payne
 Michael Greene
 
 Roger Huba
+
+TA's

@@ -1,6 +1,7 @@
 from graph_breadth_first import Graph, Vertex, Edge
+import pytest
 
-
+@pytest.mark.skip(reason="pending")
 def test_graph_breadth_first():
     graph = Graph()
     # test add_node method
@@ -38,7 +39,7 @@ def test_graph_breadth_first():
     # assert graph.breadth_first(c)[0] == c
     # assert graph.breadth_first(c)[1] == a
     # assert graph.breadth_first(c)[2] == b
-
+@pytest.mark.skip(reason="pending")
 def test_graph_breadth_first_two():
     graph = Graph()
     # test add_node method
@@ -100,7 +101,7 @@ def test_graph_breadth_first_two():
     actual = node_2
     assert actual == expected
 
-
+@pytest.mark.skip(reason="pending")
 def test_breadth_first_is_empty():
     graph = Graph()
     actual = graph.breadth_first()
