@@ -45,14 +45,6 @@ Include the weight of the connection in the returned collection
 Arguments: none
 Returns the total number of nodes in the graph
 
-## Credit and Collaborators
-
-Eddie Ponce
-
-Alex Payne
-
-Roger Huba
-
 [Source](https://python-course.eu/applications-python/graphs-python.php)
 
 [Source](https://www.educative.io/edpresso/how-to-implement-a-graph-in-python)
@@ -98,6 +90,19 @@ space: O(v)
 
 ![Pytest](./images/pytest.png)
 
+## Code Challenge 37 Graph Business Trip
+
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/84)
+
+## Whiteboard Process (CC 37)
+
+![WhiteBoard](./images/whiteboard-37.png)
+
+## Approach & Efficiency (CC 37)
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution (CC 37)
+<!-- Show how to run your code, and examples of it in action -->
 ## Credit and Collaborators
 
 Eddie Ponce
