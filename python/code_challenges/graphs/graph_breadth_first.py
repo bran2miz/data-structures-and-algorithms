@@ -120,6 +120,8 @@ class Graph:
                         visited.add(child.vertex_1)
         return lists
 
+    def graph_business_trip(self, vertex=None):
+
 
 class Vertex:
     def __init__(self, value):
