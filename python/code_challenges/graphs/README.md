@@ -114,6 +114,8 @@ space: O(1)
 
 ## Depth First Traversal
 
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/86)
+
 We were given reading material about depth first traversal and how it traverses through a search tree.
 
 ## Challenge (CC 38)
