@@ -1,124 +1,9 @@
-# class Node:
-#     def __init__(self, value, next= None):
-#         self.value = value
-#         self.next = next
+from stack import Stack
 
-# class Queue:
-#     def __init__(self):
-#         self.front = None
-#         self.rear = None
-
-#     def isEmpty(self):
-#         return self.front == None
-
-#     def enqueue(self, value):
-#         node = Node(value)
-#         if self.front == None:
-#             self.front = node
-#             self.rear = node
-#         else:
-#             self.rear.next = node
-#             self.rear = node
-#     # different way to do enqueue
-#     # def enqueue(self, value):
-#     #     node = Node(value)
-#     #     if self.rear:
-#     #         self.rear.next = node
-#     #     self.rear = node
-#     #     self.front = self.front or self.rear
-
-
-#     def dequeue(self):
-#         if self.front == None:
-#             raise Exception('Trying dequeue a empty queue')
-#         temp = self.front
-#         self.front = temp.next
-#         temp.next = None
-#         return temp.value
-
-#     def peek(self):
-#         if self.isEmpty():
-#             raise Exception('Trying to peek from an empty queue')
-#         return self.front.value
-
-# class Graph:
-
-#     def __init__(self):
-#         self.adjacency_list = {}
-#         self.nodes = []
-#         # key will be the node, value adj node with a value of the edge
-
-#     def add_node(self, value):
-#         vertex = Vertex(value)
-#         self.nodes.append(vertex)
-#         self.adjacency_list[vertex] = {
-#             'nodes': [],
-#             'edges': []
-#         }
-#         return vertex
-
-#     def add_edge(self, vertex_1, vertex_2, weight=1):
-#         add_edge = Edge(vertex_1, vertex_2, weight)
-#         try:
-#             self.adjacency_list[vertex_1]['nodes'].append([vertex_2,weight])
-#             self.adjacency_list[vertex_1]['edges'].append(add_edge)
-#         except Exception:
-#             print('Vertex not in the Graph')
-#         try:
-#             self.adjacency_list[vertex_2]['nodes'].append([vertex_1, weight])
-#             self.adjacency_list[vertex_2]['edges'].append(add_edge)
-#         except Exception:
-#             print('Vertex not in the graph')
-#             # Arguments: 2 nodes to be connected by the edge, weight (optional)
-#             # Returns: nothing
-#             # Adds a new edge between two nodes in the graph
-#             # If specified, assign a weight to the edge
-#             # Both nodes should already be in the Graph
-
-#     def get_node(self):
-#         return self.nodes
-#             # Arguments: none
-#             # Returns all nodes in graph as a collection (set, list, or similar)
-
-#     def get_neighbor(self, vertex):
-#         try:
-#             return self.adjacency_list[vertex]['edges']
-#         except Exception:
-#             print('not in graph')
-#             # Arguments: node
-#             # Returns a collection of edges connected to the given node
-#                 # Include the weight of connection in returned collection
-
-#     def size(self):
-#         return len(self.nodes)
-#             # Arguments: none
-#             # Returns the total number of nodes in the graph
-
-#     def breadth_first(self,vertex = None):
-#         if not vertex:
-#             return []
-#         queue = Queue()
-#         lists = []
-#         visited = set()
-
-#         queue.enqueue(vertex)
-#         visited.add(vertex)
-
-#         while not queue.isEmpty():
-#             front = queue.dequeue()
-#             neighbor = self.get_neighbor(front)
-#             lists.append(front)
-
-#             for child in neighbor:
-#                 if child.vertex_1 == front:
-#                     if child.vertex_2 not in visited:
-#                         queue.enqueue(child.vertex_2)
-#                         visited.add(child.vertex_2)
-#                 else:
-#                     if child.vertex_1 not in visited:
-#                         queue.enqueue(child.vertex_1)
-#                         visited.add(child.vertex_1)
-#         return lists
+class Node:
+    def __init__(self, value, next= None):
+        self.value = value
+        self.next = next
 
 class Vertex():
     '''
@@ -253,5 +138,60 @@ class Graph():
         Output: integer value of items in graph
         '''
         return len(self.adj_list)
+
+    def depth_first(self, node):
+            '''
+            Given a node, returns a collection of depth-first pre-ordered nodes that can be reached from the given node.
+            Input: Node
+            Output: List of Nodes
+            '''
+            if node == None:
+                return [None]
+            elif len(self.get_neighbors(node)) == 0:
+                return [node]
+
+            ret_list = []
+            node_stack = Stack()
+
+            node_stack.push(node)
+
+            while node_stack.is_empty() is not True:
+                # pop last node off of stack, this ensures we stay in pre-ordered collection. We never look at the first encountered node in the list of children, always the last.
+                temp = node_stack.pop()
+                if temp in ret_list:
+                    pass
+                else:
+                    ret_list.append(temp)
+                    temp_children = self.get_neighbors(temp)
+                    if len(temp_children) > 0:
+                        for edge in temp_children:
+                            node_stack.push(edge.end_vert)
+
+            return ret_list
+
+
+
+    # def depth_first(self, node):
+    #     if node == None:
+    #         return [None]
+
+    #     elif len(self.get_neighbors(node))== 0:
+    #         return [node]
+
+    #     lists = []
+    #     stack = Stack()
+    #     stack.push(node)
+
+    #     while stack.is_empty() is not True:
+    #         temp = stack.pop()
+    #     if temp in lists:
+    #         pass
+    #     else:
+    #         lists.append(temp)
+    #         children = self.get_neighbors(temp)
+    #         if len(children) > 0:
+    #             for edge in children:
+    #                 stack.push(edge.end_vert)
+    #     return lists
 
 

@@ -112,6 +112,33 @@ space: O(1)
 
 ![Pytest](./images/pytest-37.png)
 
+## Depth First Traversal
+
+[Pull Request](https://github.com/bran2miz/data-structures-and-algorithms/pull/86)
+
+We were given reading material about depth first traversal and how it traverses through a search tree.
+
+## Challenge (CC 38)
+
+For our last code challenge, we had to conduct a depth first preorder traversal on a graph.
+
+## Approach & Efficiency (CC 38)
+
+The way that I approached this code challenge was to consider first how a stack operates. Similar to our breadth-first traversal code challenge, using a similar approach, creating an empty stack and push nodes into the stack and poppping them out while traversing through the tree.
+
+BigO:
+time complexity would be O(v+e) where time would be dependent on the number of vertices plus the number of edges.
+
+space complexity would be O(v) where the space would be dependent on the number of vertices.
+
+## Solution (CC 38)
+
+![White Board](./images/whiteboard-38.png)
+
+![Test](./images/test-38.png)
+
+![Pytest](./images/pytest-38.png)
+
 ## Credit and Collaborators
 
 Eddie Ponce
